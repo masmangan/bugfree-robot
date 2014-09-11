@@ -1,0 +1,128 @@
+Projeto Catracas
+
+marco.mangan@gmail.com
+
+2014-08-21
+2014-08-28
+
+
+1. Visão
+========
+
+
+1.1. Problema
+-------------
+
+P1. 
+O problema da: falta de segurança
+afeta: alunos
+o impacto disso é: perda de valores
+uma solução de sucesso seria: restringir o acesso (implantar catraca)
+
+P2.
+O problema da: falta identificação dos usuários
+afeta:faculdade
+o impacto disso é: falta de restrição de acesso
+uma solução de sucesso seria: (a) cadastrar biometria, (b) gerar cartões, (c) digitar código
+
+P3.
+O problema da: tempo para identificar usuário
+afeta: faculdade
+o impacto disso é: filas longas na entrada
+uma solução de sucesso seria: reduzir o tempo de identificação
+
+P4.
+O problema da: falta de verba para o projeto
+afeta: equipe
+o impacto disso é: cancelamento do projeto, baixa qualidade
+uma solução de sucesso seria: aumentar a prioridade do projeto
+
+==> P5. (Problema atual)
+O problema da: falta de integração do cadastro com a catraca
+afeta: faculdade
+o impacto disso é: catraca inativa
+uma solução de sucesso seria: integrar o cadastro
+
+P6. -
+
+
+1.2. Envolvidos
+---------------
+
+A. Programador (Mangan)
+B. Cliente (Bertoni)
+C. Fornecedor da catraca (?)
+D. Fornecedor de cartões (?)
+E. Fornecedor do cadastro de alunos, funcionários, professores, visitantes (?)
+F. Patrocinador (Diretor)
+G. Usuário da catraca (?)
+H. Usuário do cadastro (?)
+I. Usuários de sistemas similares (Gerdau, DR, Tecno PUCRS, Ônibus - TRI, Passaporte, BB, Estádio)
+J. -
+
+1.3. Características
+--------------------
+
+1. Controle de acesso (passagem)
+2. Identificar presença na Faculdade (relatório, consulta)
+3. Cadastro de usuários
+4. Rápido (90% das passagens, o processo deve durar menos de um segundo)
+5.-
+
+
+
+HU01 - Como Coordenador de curso desejo Consultar presentes em data e horário
+
+HU01.TU01 - 
+entrada: (usuario do coordenador, senha do coordenador, data, hora de início, hora de fim) 
+[bertoni, adsads, 2014-08-21, 9:00, 10:00, ADS]
+
+dados do banco de dados
+Alunos
+(matricula, nome, idcurso, foto)
+001, Guilherme, 01, <foto1>
+002, Adriano, 01, <foto2>
+003, Adriana, 02, <foto3>
+004, Roberto, 01, <foto4>
+
+Cursos
+(idcurso, descricao)
+01, ADS
+02, Redes
+
+Passagens
+(matricula, data, hora, direção)
+001, 2014-08-21, 9h15, E
+002, 2014-08-21, 9h15, E
+003, 2014-08-21, 9h15, E
+004, 2014-08-20, 9h15, E
+
+saída: (nome, curso, foto, data, horário da passagem, direção (E/S))
+[(Guilherme, ADS, <foto1>, 2014-08-21, 9h15, E)
+(Adriano, ADS, <foto2>, 2014-08-21, 9h15, E)]
+
+HU01.TU02 - 
+entrada: (usuario do coordenador, senha incorreta, data, hora de início, hora de fim) 
+[bertoni, 123456, 2014-08-21, 9:00, 10:00, ADS]
+
+Operação cancelada: usuário ou senha inválidos
+
+HU01.TU03 - 
+entrada: (usuario do professor, senha do professor, data, hora de início, hora de fim) 
+[mangan, abcdef, 2014-08-21, 9:00, 10:00, ADS]
+
+Operação cancelada: usuário sem autorização
+
+HU02 - Como Coordenador de curso desejo Consultar presenças de um usuário cadastrado
+HU03 - Como Aluno desejo Consultar minhas presenças
+HU04 -
+
+
+
+
+
+
+
+
+
+
